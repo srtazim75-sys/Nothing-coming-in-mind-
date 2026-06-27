@@ -58,4 +58,56 @@ transform:translateY(-120vh) rotate(360deg);
 }
 }
 </style>
-</
+
+</head>
+
+<body>
+
+<div class="box">
+<h1>🌸 Welcome, Human(?) 🌸</h1>
+
+<p>This website is 99% cute.<br>
+The other 1% is emotionally unstable.</p>
+
+<button onclick="weird()">Press at your own risk</button>
+
+<div id="text">🙂</div>
+
+</div>
+
+<script>
+
+const messages=[
+"🐸 A frog just approved your existence.",
+"🦆 The ducks are judging you.",
+"🍞 Congratulations! You are now a loaf of bread.",
+"👁️ Someone blinked. It wasn't you.",
+"🐈 The cat has stolen your homework.",
+"🛸 Aliens rated you 8.7/10.",
+"🥔 You unlocked... POTATO MODE.",
+"✨ You are legally adorable."
+];
+
+function weird(){
+document.getElementById("text").innerHTML=
+messages[Math.floor(Math.random()*messages.length)];
+
+document.body.style.background=
+`hsl(${Math.random()*360},80%,85%)`;
+}
+
+setInterval(()=>{
+const e=document.createElement("div");
+e.className="cat";
+e.innerHTML=["🐱","🐸","🦆","🍞","✨","👀"][Math.floor(Math.random()*6)];
+e.style.left=Math.random()*100+"vw";
+e.style.animationDuration=(4+Math.random()*6)+"s";
+document.body.appendChild(e);
+
+setTimeout(()=>e.remove(),10000);
+},600);
+
+</script>
+
+</body>
+</html>
